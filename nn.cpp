@@ -27,10 +27,10 @@ class NN
 {
 	public:
 
-		/** ニューロンの状態を記録 */
+		// Status of Neurons
 		int neurons[N_NEURON_LAYER][N_NEURON];
 
-		/** ニューロン同士の結合荷重 */
+		// Weight of Neurons
 		float weight[N_NEURON_LAYER][N_NEURON][N_NEURON];
 
 		NN()
@@ -86,7 +86,7 @@ class NN
 #ifdef DEBUG
 			std::cout << "input" << std::endl;
 #endif
-			// 入力を入力層へ反映
+			// input neurons
 			for(int n=0; n<N_NEURON; n++)
 			{
 				neurons[0][n] = input[n];
@@ -95,7 +95,7 @@ class NN
 			viewNeurons();
 #endif
 
-			// 各層を演算
+			// calculate each layers
 #ifdef DEBUG
 			std::cout << "calc" << std::endl;
 #endif
@@ -123,7 +123,7 @@ class NN
 #ifdef DEBUG
 				std::cout << "teach" << std::endl;
 #endif
-				// 学習させる
+				// study
 				for(int layer=0; layer<N_NEURON_LAYER; layer++)
 				{
 					for(int j=0; j<N_NEURON; j++)
@@ -148,7 +148,7 @@ class NN
 #endif
 			}
 
-			// 出力層を出力
+			// return output layer
 			return neurons[N_NEURON_LAYER-1];
 		}
 

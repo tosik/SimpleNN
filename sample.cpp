@@ -29,7 +29,7 @@ using namespace std;
 int main(void)
 {
 	NN nn;
-	/** 入力信号 */
+	// input signal
 	static int input[SIZE][N_NEURON]   = {
 		{ 1,0,0,1,0 },
 		{ 0,1,0,1,0 },
@@ -37,7 +37,7 @@ int main(void)
 		{ 0,1,1,1,1 },
 		{ 1,1,1,0,1 },
 	};
-	/** 教師信号（期待する出力） */
+	// teacher signal
 	static int teacher[SIZE][N_NEURON]   = {
 		{ 0,0,0,0,0 },
 		{ 0,1,0,1,1 },
